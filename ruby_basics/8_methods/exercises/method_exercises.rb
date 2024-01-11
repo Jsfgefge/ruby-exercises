@@ -17,16 +17,28 @@ end
 # return value: an array containing items in both arrays
 # hint: use Array#intersection
 
+def common_sports(arr1, arr2)
+    arr1.intersection(arr2)
+end
+
 
 # method name: #alphabetical_list
 # parameter: games (an array)
 # return value: games, alphabetically sorted and duplicates removed
 # hint: chain Array#sort and Array#uniq together
 
+def alphabetical_list(arr)
+    arr.sort.uniq!
+end
+
 
 # method name: #lucky_number
 # parameter: number (an integer) with default value of 7
 # return value: a string "Today's lucky number is <number>"
+
+def lucky_number(num=7)
+    "Today's lucky number is " + num.to_s
+end
 
 
 # method name: #ascii_code
@@ -35,6 +47,13 @@ end
 # explicit return value: 'Input Error' if character's length does not equal 1
 # hint: use String#ord
 
+def ascii_code(str)
+    if str.size != 1 
+        "Input Error"
+    else
+        str.ord
+    end
+end
 
 # method name: #pet_pun
 # parameter: animal (a string)
@@ -44,9 +63,21 @@ end
 # console output: otherwise, "I think <animal>s have pet-tential!" (potential)
 # hint: use puts
 
+def pet_pun(str)
+    if str == "cat"
+        puts "Cats are purr-fect!"
+    elsif str == "dog"
+        puts "Dogs are paw-some!"
+    else
+        puts "I think #{str}s have pet-tential!"
+    end
+end
 
 # method name: #twenty_first_century?
 # parameter: year (an integer)
 # return value: true if the year is between 2001 - 2100, otherwise return false
 # hint: use Comparable#between?
 
+def twenty_first_century?(year)
+    year.between?(2001,2100)
+end
